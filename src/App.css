@@ -1,38 +1,123 @@
-.App {
+/* Navigation */
+nav {
+  background-color: cadetblue;
+  display: flex;
+  padding: 0 3%;
+}
+nav h1 {
+  padding: 10px;
+  margin-right: auto;
+}
+nav ul{
+  display: flex;
+  list-style-type: none;
+  margin-left: auto;
+}
+nav li {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+.active {
+  color: yellow;
+}
+
+
+/* Profile */
+.profile-container, .repo-container, .search-container {
+  width: 50%;
+  margin: 0 auto;
+  border: 2px solid cadetblue;
+  border-bottom: 0;
+  box-sizing: border-box;
+}
+.profile-container header {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 5%;
+  border-bottom: 2px solid cadetblue;
+}
+.profile-container img {
+  width: 200px;
+  height: 100%;
+}
+.profile-container pre {
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+ }
+ 
+.profile-container .follow {
+  display: flex;
+}
+.profile-container .follow p {
+  padding-right: 5px;
+}
+.profile-container section {
+  border-bottom: 2px solid cadetblue;
+  padding: 20px;
+}
+.profile-container section h2 {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.profile-container .count {
+  color: green;
+}
+.profile-container .gist {
+  margin-bottom: 10px;
+}
+.profile-container .gist-files {
+  padding-left: 10px;
+}
+.not-found {
+  text-align: center;
+  color: red;
+  font-size: 2em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Repo */
+.repo-container {
+  border-bottom: 2px solid cadetblue;
+}
+.repo-section, .repo-search {
+  padding: 20px;
+}
+
+/* Search */
+.search-container {
+  background-color: rgb(70, 140, 143);
+  text-align: center;
+}
+.search-container * {
+  margin: 10px;
+  padding: 7px;
+}
+.search-container button {
+  background-color: dodgerblue;
+  color: #fff;
+  border: 2px solid dodgerblue;
+  font-weight: bold;
+  cursor: pointer;
+}
+.search-container button:hover {
+  background-color: rgb(52, 154, 255);
+}
+
+/* responsive */
+@media screen and (max-width: 700px) {
+  .profile-container, .repo-container, .search-container {
+    width: 100%;
+  }
+  .profile-container header {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .profile-container header {
+    grid-template-columns: 12fr;
+    gap: 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

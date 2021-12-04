@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Home from './Components/Home';
+import Search from './Components/Search';
+
 
 function App() {
+  const [page,setPage] = useState("home");
+
+  function handleClick(pageId) {
+    setPage(pageId);   
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <nav>
+          <div>
+            <h1>GITHUB APP</h1>
+          </div>
+          <ul>
+            <li className={page === "home" ? "active" : null} onClick={e => handleClick("home")}>Home page</li>
+            <li className={page === "search" ? "active" : null} onClick={e => handleClick("search")}>Search page</li>
+          </ul>
+        </nav>
+      </div>
+      {page === "home" ? <Home/> : <Search/>}
     </div>
   );
 }
