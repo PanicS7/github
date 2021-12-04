@@ -1,10 +1,12 @@
 # How to run application
 Steps: 
 1. Install [node.js](https://nodejs.org/en/) if you dont have it installed
-1. Open folder in terminal or cmd and type next:
-1. Type **npm install** to install all packages used for this app
-1. To run app type **npm start**
-1. Your app should start on **localhost:3000** on your browser
+1. After cloning repo, and opening file, in terminal type:
+2. **cd github-master** it will change directory to folder of app
+3. Type **npm install** to install all packages used for this app
+4. In file **token.js** replace token with your token, to generate [click here](https://github.com/settings/tokens)
+5. To run app type **npm start**
+6. Your app should start on **localhost:3000** on your browser
 
 
 ## App has 2 pages
